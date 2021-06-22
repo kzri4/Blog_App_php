@@ -23,6 +23,7 @@ label {
     display: block;
     margin-bottom: 3px;
 }
+
 input[type="email"],
 input[type="text"],
 input[type="password"],
@@ -32,6 +33,7 @@ textarea {
     padding: 10px;
     width: 100%;
 }
+
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -40,12 +42,18 @@ textarea:focus {
     background-color: #fff;
     border-bottom: 2px solid #83867d;
 }
+
+img {
+    max-width: 100%;
+}
+
 .wrapper {
     width: 1100px;
     margin: 0 auto;
     padding: 0 4%;
     min-height: calc(100vh - 240px);  /* フッター下部固定用 */
 }
+
 .user-wrapper {
     width: 700px;
 }
@@ -56,20 +64,24 @@ textarea:focus {
     margin: 0 auto;
     padding: 0 8%;
 }
+
 .page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
 }
+
 .main-nav {
     display: flex;
     list-style: none;
 }
+
 .main-nav li a {
     padding-left: 30px;
     letter-spacing: 0.1rem;
 }
+
 .title {
     margin: 20px 0 40px 0;
     text-align: center;
@@ -99,6 +111,7 @@ textarea:focus {
 .form-group {
     margin-bottom: 20px;
 }
+
 .required {
     background-color: rgb(238, 91, 91);
     color: #ffffff;
@@ -106,6 +119,7 @@ textarea:focus {
     padding: 0 10px;
     margin-left: 8px;
 }
+
 .btn {
     background-color: rgb(75, 81, 83);
     color: #fff;
@@ -115,10 +129,186 @@ textarea:focus {
     padding: 10px 30px;
     width: 100%;
 }
-.btn:hover {
+.btn-comment-new {
+    background-color: rgb(75, 81, 83);
+    color: #fff;
+    letter-spacing: 0.2rem;
+    text-indent: 0.2rem;
+    padding: 10px 30px;
+}
+
+.btn:hover,
+.btn-comment-new:hover {
     background-color: #686d72;
     color: #fff;
 }
+
+.btn-edit {
+    background-color: #a0954f;
+}
+
+.btn-edit:hover {
+    background-color: #e4d88b;
+    color: #fff;
+}
+.btn-delete {
+    background-color: #e66d64;
+}
+
+.btn-delete:hover {
+    background-color: #eb8e87;
+    color: #fff;
+}
+
+/* ブログ照会画面
+-----------------------*/
+.post-detail {
+    margin-bottom: 20px;
+}
+
+.post-detail h2 {
+    border-bottom-color: #eee;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    margin: auto 0 auto 15px;
+}
+
+.post-body {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.post-btn-edit-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-btn-edit-area .btn-edit {
+    width: 100%;
+}
+
+.post-btn-edit-area form {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.post-user-area {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.post-user {
+    display: flex;
+}
+
+.post-user img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    object-position: center center;
+    border: 1px #83867d solid;
+}
+
+.post-user-name {
+    margin: auto 0 auto 10px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-hr {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: rgb(216, 213, 213);
+    margin: 10px 0;
+}
+
+.comment-list-item {
+    display: flex;
+}
+
+.comment-no {
+    width: 60px;
+    text-align: center;
+}
+
+.comment-detail {
+    border-bottom-color: #eee;
+    border-bottom-width: thin;
+    border-bottom-style: solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.comment-body {
+    margin-bottom: 10px;
+}
+
+.comment-user-area {
+    display: flex;
+}
+
+.comment-user {
+    display: flex;
+}
+
+.comment-date {
+    margin: auto 0;
+}
+
+.comment-btn-area {
+    display: flex;
+    margin: auto 0;
+}
+
+.comment-user-area img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    object-position: center center;
+    border: 1px #83867d solid;
+}
+
+.comment-user-name {
+    margin: auto 15px auto 10px;
+}
+
+.comment-user-name a {
+    color: rgb(102, 170, 238);
+}
+
+.comment-edit,
+.comment-delete {
+    margin-left: 15px;
+}
+
+.comment-delete:hover {
+    color: rgb(199, 174, 199);
+}
+
+/* レスポンシブ対応
+-----------------------*/
+@media screen and (max-width: 1100px) {
+    .wrapper {
+        width: 900px;
+    }
+    .user-wrapper {
+        width: 700px;
+    }
+}
+
+  /* ------- 省略 ------- */
 
 /* レスポンシブ対応
 -----------------------*/
@@ -149,6 +339,17 @@ textarea:focus {
     .wrapper,
     .user-wrapper {
         width: 500px;
+    }
+    .post-user-area,
+    .comment-user-area {
+        flex-direction: column;
+    }
+    .post-date,
+    .comment-date {
+        text-align: end;
+    }
+    .comment-btn-area {
+        justify-content: flex-end;
     }
 }
 @media screen and (max-width: 500px) {

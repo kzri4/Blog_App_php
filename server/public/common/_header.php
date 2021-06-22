@@ -1,4 +1,4 @@
-<header class="page-header header-wrepper">
+<header class="page-header header-wrapper">
     <h1 class="logo"><a hrer="/">NR BLOG</a></h1>
     <nav>
         <ul class="main-nav">
