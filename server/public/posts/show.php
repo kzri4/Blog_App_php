@@ -1,3 +1,13 @@
+<?php
+
+require_once __DIR__ . '/../../models/Post.class.php';
+
+$id = filter_input(INPUT_GET, 'id');
+$post = Post::findwithUser($id);
+$user = User::find($post->getId());
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,13 +18,13 @@
 
     <div class="wrapper">
         <article class="post-detail">
-            <h2 class="post-title">テストタイトル</h2>
+            <h2 class="post-title"><?= h($post->getTitle()) ?></h2>
             <div class="post-user-area">
                 <div class="post-user">
                     <img src="/images/users/20210202150117_user1.png" alt="">
                     <p class="post-user-name">テストユーザー名</p>
                 </div>
-                <div class="post-date">2021.2.10 14:20:11</div>
+                <div class="post-date">テスト</div>
             </div>
             <div class="image-trim">
                 <img src="/images/posts/202102021501171_post4.jpg" alt="">
