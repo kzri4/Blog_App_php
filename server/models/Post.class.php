@@ -5,7 +5,7 @@ require_once __DIR__ . '/User.class.php';
 
 class Post
 {
-    private const IMAGE_ROOT_PATH = '/images/posts';
+    private const IMAGE_ROOT_PATH = '/images/posts/';
     private const NO_IMAGE = 'no_image.png';
 
     private $id;
@@ -76,11 +76,11 @@ class Post
             $stmt->execute();
             $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($post) {
-            $instance = new static($post);
-        }
+            if ($post) {
+                $instance = new static($post);
+            }
         } catch (PDOException $e) {
-        error_log($e->getMessage());
+            error_log($e->getMessage());
         }
         return $instance;
     }
