@@ -3,7 +3,8 @@
 require_once __DIR__ . '/../../models/Post.class.php';
 
 $id = filter_input(INPUT_GET, 'id');
-$post = Post::findwithUser($id);
+$post = Post::findwithUser(1);
+var_dump($post);
 
 ?>
 
@@ -17,7 +18,7 @@ $post = Post::findwithUser($id);
 
     <div class="wrapper">
         <article class="post-detail">
-            <h2 class="post-title">テスト</h2>
+            <h2 class="post-title">new</h2>
             <div class="post-user-area">
                 <div class="post-user">
                     <img src="/images/users/20210202150117_user1.png" alt="">

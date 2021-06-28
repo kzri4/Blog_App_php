@@ -1,7 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../common/functions.php';
-require_once __DIR__ . '/User.class.php';
+
+$id = filter_input(INPUT_GET, 'id');
 
 class Post
 {
